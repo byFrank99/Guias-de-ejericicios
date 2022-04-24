@@ -1,6 +1,7 @@
 #include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
+#define TAMAGNO 50
 
 /* -------------------------------------------------------------------------- */
 /*                                Introducción                                */
@@ -284,12 +285,151 @@
 
 /* ----------------------------------- 26 ----------------------------------- */
 // Funcion baskara
-float baskara (float a, float b, float c, float x){
-    a < 0 && b < 0 && c < 0 && x < 0 ? printf("Ingrese valores validos.\n") : printf("El resultado es: ");
-    return sqrt (a * pow (x, 2) + b * x + c);
-}
-int main(void){
-    printf  ("%f\n", baskara(1, 10, 2, 3));
-    return 0;
-}
-// ! Verificar resultado. Ver que es un polinomio de grado 2 dentro de una raiz :O
+// float baskara (float a, float b, float c, float x){
+//     a < 0 && b < 0 && c < 0 && x < 0 ? printf("Ingrese valores validos.\n") : printf("El resultado es: ");
+//     return sqrt (a * pow (x, 2) + b * x + c);
+// }
+// int main(void){
+//     printf  ("%f\n", baskara(1, 10, 2, 3));
+//     return 0;
+// }
+// // ! Verificar resultado. Ver que es un polinomio de grado 2 dentro de una raiz :O
+
+/* ----------------------------------- 28 ----------------------------------- */
+// Escribir funciones que resuelvan los siguientes problemas:
+
+// a) Dado un año indicar si es bisiesto.
+// bool es_bisiesto (int agnos){
+//     if (agnos % 4 == 0 && agnos % 100 != 0 || agnos % 400 == 0) {
+//         printf("El año %d es bisiesto\n", agnos);
+//     } else {
+//         printf("El año %d no es bisiesto\n", agnos);
+//     }
+//     return 0;
+// }
+// int main(void) {
+//     es_bisiesto(2019);
+//     return 0;
+// }
+
+// b) Dado un mes y un año, devolver la cantidad de días correspondientes.
+//! En este ejercicio voy a suponer que todos los meses tienen 31 días.
+// Se podria hacer con switch pero bueno trabajo para el Francisco del furuto :D
+// int dias_totales (int mes, int agnos) {
+// return mes * 31 + agnos * 364;
+// }
+// int main(void) {
+// printf("El total de dias es: %d\n", dias_totales(2, 2019));
+// return 0;
+// }
+
+// c) Dada una fecha (día, mes, año), indicar si es válida o no.
+// bool es_valida (int dia, int mes, int agnos){
+//     // Opcion 1
+//     if(dia >= 1 && dia <= 31 && mes >= 1 && mes <= 12 && agnos >= 1 && agnos <= 9999){
+//         printf("La fecha es valida\n");
+//     } else {
+//         printf("La fecha no es valida\n");
+//     }
+//     // Opcion 2
+//     dia >= 1 && dia <= 31 && mes >= 1 && mes <= 12 && agnos >= 1 && agnos <= 9999 ? printf("La fecha es valida\n") : printf("La fecha no es valida\n");
+// }
+// int main(void) {
+//     es_valida(-1, 1, 2019);
+//     return 0;
+// }
+
+// d) Dada una fecha, indicar los días que faltan hasta fin de mes.
+// Utilizo la funcion anterior para calcular los dias totales del mes y del año.
+// int dias_totales (int mes, int agnos) {
+//     return mes * 31 + agnos * 364;
+// }
+// int dias_faltantes (int dia, int mes, int agnos) {
+//     return dias_totales(mes, agnos) - dia;
+// }
+// int main(void) {
+//     printf("Faltan %d dias para el final del mes\n", dias_faltantes(31, 2, 2019));
+//     return 0;
+// }
+
+/* ----------------------------------- 29 ----------------------------------- */
+// Escribir un programa que calcule la mínima cantidad de billetes (moneda peso argentino) con los que se puede obtener un monto.
+//  Ejemplo: 2320 ARS = (2x1000 ARS + 3x100 ARS + 1x20 ARS).
+//  int cantidad_minima (int monto_ingresado) {
+//      int billetes_1000 = monto_ingresado / 1000;
+//      int billetes_100 = (monto_ingresado % 1000) / 100;
+//      int billetes_20 = ((monto_ingresado % 1000) % 100) / 20;
+//      int billetes_10 = (((monto_ingresado % 1000) % 100) % 20) / 10;
+//      int billetes_5 = ((((monto_ingresado % 1000) % 100) % 20) % 10) / 5;
+//      int billetes_2 = (((((monto_ingresado % 1000) % 100) % 20) % 10) % 5) / 2;
+//      int billetes_1 = ((((((monto_ingresado % 1000) % 100) % 20) % 10) % 5) % 2) / 1;
+//      printf("La cantidad minima de $%d ARS es:\n%d billetes de 1000\n%d billetes de 100\n%d billetes de 20\n%d billetes de 10\n%d billetes de 5\n%d billetes de 2\n%d billetes de 1\n", monto_ingresado, billetes_1000, billetes_100, billetes_20, billetes_10, billetes_5, billetes_2, billetes_1);
+//      return 0;
+//  }
+//  int main(void) {
+//      cantidad_minima(2320);
+//      return 0;
+//  }
+
+/* ----------------------------------- 31 ----------------------------------- */
+// (Decisión múltiple) Escribir una función que dado un carácter imprima:
+
+// int decision (char caracter) {
+//     if(caracter == 'A'){
+//         printf("House Arryn\n");
+//     }
+//     else if(caracter == 'B'){
+//         printf("House Baratheon\n");
+//     }
+//     else if(caracter == 'F'){
+//         printf("House Frey\n");
+//     }
+//     else if(caracter == 'G'){
+//         printf("House Greyjoy\n");
+//     }
+//     else if(caracter == 'L'){
+//         printf("House Lannister\n");
+//     }
+//     else if(caracter == 'M'){
+//         printf("House Martell\n");
+// }
+// else if(caracter == 'S'){
+//     printf("House Stark\n");
+// }
+// else if(caracter == 'T'){
+//     printf("House Targaryen\n");
+// }
+// else {
+//     printf("No lo conozco :(\n");
+// }
+// return 0;
+// }
+
+// int main(void) {
+//     decision('z');
+//     return 0;
+// }
+
+/* -------------------------------------------------------------------------- */
+/*                        Interactuando con el usuario                        */
+/* -------------------------------------------------------------------------- */
+
+/* ----------------------------------- 51 ----------------------------------- */
+// Escribir un programa que calcule el inverso y la raíz de un número ingresado por teclado. Realice las validaciones necesarias. Nota: puede elegir NO calcular la raíz de números negativos o mostrar un valor complejo.
+// int inverso(int numero) {
+//     return numero * -1;
+// }
+// float raiz(int numero) {
+//     return sqrt(numero);
+// }
+
+// int main(void) {
+//     char numero_ingresado[TAMAGNO];
+//     fgets(numero_ingresado, TAMAGNO, stdin);
+//     int conversion = atoi(numero_ingresado);
+//     printf("El inverso de %d es %d\n", conversion, inverso(conversion));
+//     printf("La raiz de %d es %.2f\n", conversion, raiz(conversion));
+//     return 0;
+// }
+
+/* ----------------------------------- 52 ----------------------------------- */
