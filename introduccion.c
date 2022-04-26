@@ -433,4 +433,87 @@
 // }
 
 /* ----------------------------------- 52 ----------------------------------- */
+/* Escribir un programa que dado un día del año (1 a 366) ingresado por el usuario, imprima el día de la semana que le corresponde. Debe asumir que el año comenzó, por ejemplo, un domingo. Por ejemplo: si se ingresa '5', imprime 'jueves', si se ingresa '10' imprime 'martes', si se ingresa '294' imprime 'sabado'. */
 
+/* ----------------------------------- 53 ----------------------------------- */
+/* Escribir un programa que convierta una cantidad de segundos ingresada por teclado a horas, minutos y segundos. Realice las validaciones necesarias. */
+// int conversion_segundos(int segundos) {
+//     int horas = segundos / 3600;
+//     int minutos = (segundos % 3600) / 60;
+//     int segundos_final = (segundos % 3600) % 60;
+//     printf("%d segundos son:\n%d horas\n%d minutos\n%d segundos\n", segundos, horas, minutos, segundos_final);
+//     return 0;
+// }
+// int main(void) {
+//     char segundos_ingresados[TAMAGNO];
+//     fgets(segundos_ingresados, TAMAGNO, stdin);
+//     int conversion = atoi(segundos_ingresados);
+//     conversion_segundos(conversion);
+//     return 0;
+// }
+
+/* ----------------------------------- 54 ----------------------------------- */
+/* Escribir un programa que cuente la cantidad de líneas ingresadas por stdin hasta el ingreso de EOF. Al finalizar, muestre el resultado por pantalla. */
+
+// Opcion 1
+// int contador_lineas(void) {
+//     int contador = 0;
+//     char caracter;
+//     while((caracter = getchar()) != EOF){
+//         if(caracter == '\n'){
+//             contador++;
+//         }
+//     }
+//     printf("El número de líneas ingresadas es: %d\n", contador);
+//     return 0;
+// }
+// int main(void) {
+//     contador_lineas();
+//     return 0;
+// }
+
+// Opcion 2
+// int main(void) {
+//     char texto_ingresado;
+//     int cantidad_lineas = 0;
+//     while ((texto_ingresado = getchar()) != EOF) {
+//         if (texto_ingresado == '\n') {
+//             cantidad_lineas++;
+//         }
+//     }
+//     printf("La cantidad de lineas es: %d\n", cantidad_lineas);
+//     return 0;
+// }
+
+/* ----------------------------------- 55 ----------------------------------- */
+/* Escribir un programa que cuente la cantidad de espacios, tabuladores, caracteres de nueva línea y letras ingresados por stdin hasta el ingreso de EOF. Al finalizar, muestre el resultado por pantalla discriminando cada cuenta. */
+
+// int contador(void) {
+//     int espacios = 0, tabuladores = 0, barra_n = 0, letras = 0;
+//     char texto_ingresado;
+//     while ((texto_ingresado = getchar()) != EOF) {
+//         if (texto_ingresado == ' ') {
+//             espacios++;
+//         } else if (texto_ingresado == '\t') {
+//             tabuladores++;
+//         } else if (texto_ingresado == '\n') {
+//             barra_n++;
+//         } else {
+//             letras++;
+//         }
+//     }
+//     printf("La cantidad de espacios es: %d\n", espacios);
+//     printf("La cantidad de tabuladores es: %d\n", tabuladores);
+//     printf("La cantidad de barras de nueva linea es: %d\n", barra_n);
+//     printf("La cantidad de letras es: %d\n", letras);
+//     return 0;
+// }
+
+// int main(void) {
+//     contador();
+//     return 0;
+// }
+
+/* ----------------------------------- 56 ----------------------------------- */
+
+/* Escribir un programa que pida números al usuario en tanto no se dispare la marca de EOF (en las terminales de GNU/Linux se dispara con Control+D). Al recibir la finalización, imprima los valores máximo, mínimo, promedio del intervalo. */
