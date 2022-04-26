@@ -516,4 +516,27 @@
 
 /* ----------------------------------- 56 ----------------------------------- */
 
-/* Escribir un programa que pida números al usuario en tanto no se dispare la marca de EOF (en las terminales de GNU/Linux se dispara con Control+D). Al recibir la finalización, imprima los valores máximo, mínimo, promedio del intervalo. */
+/* Escribir un programa que pida números al usuario en tanto no se dispare la marca de EOF. Al recibir la finalización, imprima los valores máximo, mínimo, promedio del intervalo. */
+//! Revisar
+int main(void) {
+char almacenamiento;
+int maximo, minimo, i;
+float promedio;
+while(((almacenamiento = getchar()) != EOF)){
+    int conversion = atoi(almacenamiento);
+    if(conversion > maximo){
+        maximo = conversion;
+    }
+    if(conversion < minimo){
+        minimo = conversion;
+    }
+    promedio = promedio + conversion;
+    i++;
+}
+promedio = promedio / i;
+printf("El máximo es: %d\n", maximo);
+printf("El mínimo es: %d\n", minimo);
+printf("El promedio es: %.2f\n", promedio);
+return 0;
+}
+
