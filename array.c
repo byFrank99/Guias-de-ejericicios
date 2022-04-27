@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <time.h>
-#define BUFF 50
+#define TAMAGNO 50
 
 /* -------------------------------------------------------------------------- */
 /*                          Arreglos unidimensionales                         */
@@ -30,14 +32,14 @@
 // }
 /* ------------------------------------ c ----------------------------------- */
 /* Un arreglo de SIZE floats, todos ellos de valor 0. */
-int main(void) {
-    float array[SIZE] = {0.0};
-    printf("Los valores del array son:\n");
-    for (size_t i = 0; i < SIZE; i++) {
-        printf("%.1f\n", array[i]);
-    }
-    return 0;
-}
+// int main(void) {
+//     float array[SIZE] = {0.0};
+//     printf("Los valores del array son:\n");
+//     for (size_t i = 0; i < SIZE; i++) {
+//         printf("%.1f\n", array[i]);
+//     }
+//     return 0;
+// }
 
 /* ------------------------------------ d ----------------------------------- */
 // un array de 4 elementos --> 9, 5 , 1, 1
@@ -92,6 +94,63 @@ int main(void) {
 //     printf("\n");
 //     return 0;
 // }
+
+/* ------------------------------------ 3 ----------------------------------- */
+
+// Escribir ciclos que realicen cada una de las siguientes operaciones:
+// a) Inicializar un vector de 10 elementos con ceros.
+// int main(void) {
+//     int array_ceros[10];
+//     printf("El arreglo es:\n");
+//     for (size_t i = 0; i < 10; i++) {
+//         array_ceros[i] = 0;
+//         printf("%d ", array_ceros[i]);
+//     }
+//     return 0;
+// }
+
+// b) Sumar 1 a cada uno de los 15 elementos del arreglo vector.
+// int main(void) {
+//     int vector[15];
+//     int actual = 0;
+//     for (size_t i = 0; i <= 10; i++) {
+//         actual += 1;
+//         vector[i] = actual;
+//         printf("%d ", vector[i]);
+//     }
+//     putchar('\n');
+//     return 0;
+// }
+
+// c) Leer del teclado y almacenar 12 valores de punto flotante en el arreglo temp_mensuales.
+//! Revisar
+// d) Imprimir los 5 primeros valores del vector de enteros puntajes en forma de columna.
+// int main(void) {
+//     int puntajes[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+//     printf("Los primeros 5 valores son: \n");
+//     for (size_t i = 0; i < 5; i++) {
+//         printf(" %d\n", puntajes[i]);
+//     }
+//     return 0;
+// }
+
+// e) Sumar un 30% a cada uno de los 20 elementos del arreglo de números salarios
+// float salarios[20] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
+// float porcetaje (float n){
+//     return (n * 30) / 100;
+// }
+// int main(void){
+// for (size_t i = 0; i < 20; i++) {
+    //! RECORDAR --> doble %% para printear %
+//     printf("El valor %.0f con un %%30+ es: %.2f\n",salarios[i] , salarios[i] + porcetaje(i));
+// }
+// return 0;
+// }
+
+/* ------------------------------------ 4 ----------------------------------- */
+/* Escribir un programa que permita ingresar una cantidad fija de números, los almacene en un arreglo y luego imprima la media y la varianza del mismo. */
+    
+
 
 /* -------------------------------------------------------------------------- */
 /*                  Funciones con arreglos multidimensionales                 */
@@ -164,23 +223,23 @@ int main(void) {
 
 /* ----------------------------------- 18 ----------------------------------- */
 // (programas con matrices) Para cada inciso escriba un programa que lo resuelva, o escriba un programa que resuelva todos:
-//a) cargue una matriz y calcule su traza (suma de los elementos de la diagonal principal)
-void matriz_traza(size_t filas, size_t cols, int matriz[][cols]) {
+// a) cargue una matriz y calcule su traza (suma de los elementos de la diagonal principal)
+// void matriz_traza(size_t filas, size_t cols, int matriz[][cols]) {
 
-    int traza = 0;
-    for (size_t i = 0; i < filas; i++) {
-        for (size_t j = 0; j < cols; j++) {
-            if (i == j) {
-                matriz_traza[i][j] = 2;
-                traza += matriz[i][j];
-            }
-        }
-    }
-    printf("La traza de la matriz es: %d\n", traza);
-}
-    int main(void) {
-        size_t filas = 2, cols = 2;
-        int matriz[filas][cols];
-        matriz_traza(filas, cols, matriz);
-        return 0;
-    }
+//     int traza = 0;
+//     for (size_t i = 0; i < filas; i++) {
+//         for (size_t j = 0; j < cols; j++) {
+//             if (i == j) {
+//                 matriz_traza[i][j] = 2;
+//                 traza += matriz[i][j];
+//             }
+//         }
+//     }
+//     printf("La traza de la matriz es: %d\n", traza);
+// }
+// int main(void) {
+//     size_t filas = 2, cols = 2;
+//     int matriz[filas][cols];
+//     matriz_traza(filas, cols, matriz);
+//     return 0;
+// }
