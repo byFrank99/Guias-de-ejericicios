@@ -1,3 +1,4 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -141,7 +142,7 @@
 // }
 // int main(void){
 // for (size_t i = 0; i < 20; i++) {
-    //! RECORDAR --> doble %% para printear %
+//! RECORDAR --> doble %% para printear %
 //     printf("El valor %.0f con un %%30+ es: %.2f\n",salarios[i] , salarios[i] + porcetaje(i));
 // }
 // return 0;
@@ -149,8 +150,115 @@
 
 /* ------------------------------------ 4 ----------------------------------- */
 /* Escribir un programa que permita ingresar una cantidad fija de números, los almacene en un arreglo y luego imprima la media y la varianza del mismo. */
-    
+// float media(float array[], size_t n) {
+//     float suma = 0;
+//     for (size_t i = 0; i < n; i++) {
+//         suma += array[i];
+//     }
+//     return suma / n;
+// }
+// float varianza(float array[], size_t n) {
+//     float suma = 0;
+//     float media_array = media(array, n);
+//     for (size_t i = 0; i < n; i++) {
+//         suma += pow(array[i] - media_array, 2);
+//     }
+//     return suma / n;
+// }
 
+// int main(void) {
+//     size_t i;
+//     char ingreso[5];
+//     int valores[5];
+//     for (i = 0; i < 5; i++) {
+//         printf("Ingrese un numero: ");
+//         fgets(ingreso, 5, stdin);
+//         int conversion = atoi(ingreso);
+//         valores[i] = conversion;
+//     }
+//     for (i = 0; i < 5; i++) {
+//         printf("Los valores ingresados son: %d\n", valores[i]);
+//         printf("La media es: %.2f, la varianza es: %.2f\n", media(valores, 5), varianza(valores, 5));
+//     }
+//     return 0;
+// }
+
+/* -------------------------------------------------------------------------- */
+/*                   Funciones con arreglos unidimensionales                  */
+/* -------------------------------------------------------------------------- */
+
+/* ------------------------------------ 8 ----------------------------------- */
+// (matemática) Implementar funciones que reciban un arreglo de números y su longitud y realicen las siguientes operaciones:
+// a) completar el vector con ceros,
+// int array_ceros(int array[], int n) {
+//     for (size_t i = 0; i < n; i++) {
+//         array[i] = 0;
+//         printf("%d\n", array[i]);
+//     }
+//     return 0;
+// }
+
+// int main(void) {
+//     int valores[5];
+//     printf("Full ceros\n");
+//     array_ceros(valores, 5);
+//     return 0;
+// }
+
+// b) completar el vector con unos,
+// int arrays1(int array[], int n) {
+//     for (size_t i = 0; i < n; i++) {
+//         array[i] = 1;
+//         printf("%d\t", array[i]);
+//     }
+// return 0;
+// }
+
+// int main (void) {
+//     int valores[5];
+//     arrays1(valores, 5);
+//     putchar('\n');
+//     return 0;
+// }
+
+// c) calcular y retornar la suma,
+//! IMPORTANT
+
+// int suma(int array[], int n) {
+//     printf("El resultado de la suma del array es: ");
+//     int actual = 0;
+//     for (size_t i = 0; i < n; i++) {
+//         actual += array[i];
+//     }
+//     printf("%d\n", actual);
+//     return 0;
+// }
+// int main(void) {
+//     int valores[5] = {0, 1, 2, 3, 4};
+//     suma(valores, 5);
+//     return 0;
+// }
+
+// f) retornar el valor máximo del arreglo,
+//! completar
+int max(int array[], int n) {
+    int a = 0;
+    for (size_t i = 0; i < n; i++) {
+        if(a > array[i]){
+            return a;
+        }
+        else{
+            a = array[i];
+        }
+    }
+    printf("El numero maximo es: %d\n", a);
+    return 0;
+}
+int main(void) {
+    int valores[5] = {0, 1, 10, 3, 4};
+    max(valores, 5);
+    return 0; 
+}
 
 /* -------------------------------------------------------------------------- */
 /*                  Funciones con arreglos multidimensionales                 */
