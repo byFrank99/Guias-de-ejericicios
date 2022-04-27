@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -240,25 +241,172 @@
 // }
 
 // f) retornar el valor máximo del arreglo,
-//! completar
-int max(int array[], int n) {
-    int a = 0;
-    for (size_t i = 0; i < n; i++) {
-        if(a > array[i]){
-            return a;
-        }
-        else{
-            a = array[i];
-        }
-    }
-    printf("El numero maximo es: %d\n", a);
-    return 0;
-}
-int main(void) {
-    int valores[5] = {0, 1, 10, 3, 4};
-    max(valores, 5);
-    return 0; 
-}
+// int max(int array[], int n) {
+//     int a = array[0];
+//     for (size_t i = 0; i < n; i++) {
+//         array[i] > a ?  a = array[i]: a ;
+//     }
+//     printf("El valor maximo del array es: %d\n", a);
+//     return 0;
+// }
+// int main(void) {
+//     int valores[5] = {0, 1, 10, 3, 4};
+//     max(valores, 5);
+//     return 0;
+// }
+
+// g) retornar el valor mínimo del arreglo,
+// int min(int array[], int n) {
+//     int a = array[0];
+//     for (size_t i = 0; i < n; i++) {
+//         array[i] < a ? a = array[i] : a;
+//     }
+//     printf("El valor minimo del array es: %d\n", a);
+//     return 0;
+// }
+
+// int main(void) {
+//     int valores[3] = {0, 1, -29};
+//     min(valores, 3);
+//     return 0;
+// }
+
+// h) modificar los elementos del vector reemplazándolos por sus valores al cuadrado,
+// int array_cuad(int array[], int n) {
+//     int a = array[0];
+//     printf("Los valores al cuadrado del array son:\t");
+//     for (size_t i = 0; i < n; i++) {
+//         a = array[i] * array[i];
+//         printf("%d ", a);
+//     }
+//     putchar('\n');
+//     return 0;
+// }
+
+// int main(void) {
+//     int valores[3] = {4, 1, 2};
+//     array_cuad(valores, 3);
+//     return 0;
+// }
+
+/* ------------------------------------ 9 ----------------------------------- */
+// Implementar una función que reciba 2 vectores y sus longitudes, y copie el contenido de uno en el otro, usando el siguiente prototipo:
+// La función debe retornar false en caso de no poder completar la operación.
+// bool veccpy(double dest[], size_t ldest, const double orig[], size_t lorig) {
+
+//     if (ldest < lorig) {
+//         return false;
+//     }
+//     for (size_t i = 0; i < lorig; i++) {
+//         dest[i] = orig[i];
+//     }
+//     return true;
+// }
+// int main(void) {
+//     double valores_1[5] = {1, 1, 2, 3, 7};
+//     double valores_2[5] = {0};
+//     printf("Esta es la cadena original --> ");
+//     for (int i = 0; i < 5; i++) {
+//         printf("%.0f", valores_1[i]);
+//     }
+//     putchar('\n');
+
+//     printf("Esta es la copia --> ");
+//     for (int i = 0; i < 5; i++) {
+//         veccpy(valores_1, 5, valores_2, 5);
+//         printf("%.0f", valores_1[i]);
+//     }
+//     putchar('\n');
+
+//     return 0;
+// }
+
+/* ----------------------------------- 10 ----------------------------------- */
+/* Implementar una función que reciba 2 vectores y sus longitudes, y retorne un valor booleano indicando si los vectores son iguales. */
+// bool son_iguales(int array_1[], size_t n1, int array_2[], size_t n2) {
+//     if (n1 != n2)
+//         return false;
+
+//     for (size_t i = 0; i < n1; i++) {
+//         if (array_1[i] != array_2[i]) return false;
+//     }
+//     return true;
+// }
+// int main(void) {
+//     int valores_1[5] = {1, 2, 3, 4, 5};
+//     int valores_2[5] = {1, 2, 3, 4, 5};
+
+//     int valores_3[5] = {0, 2, 3, 4, 0};
+//     int valores_4[5] = {1, 2, 3, 4, 5};
+
+//     printf("0=False\t1=True.\n");
+//     printf("%d\n", son_iguales(valores_1, 5, valores_2, 5));
+//     printf("%d\n", son_iguales(valores_3, 5, valores_4, 5));
+
+//     return 0;
+// }
+
+/* ----------------------------------- 11 ----------------------------------- */
+// Implementar una función que reciba un vector, su longitud y retorne true si el mismo se encuentra ordenado, false en caso contrario.
+// bool ordenado(int valores[1], size_t n1) {
+
+//     for (size_t i = 0; i < n1; i++) {
+//         if(valores[i] > valores[i+1]) return false;
+//     }
+//     return true;
+// }
+
+// int main(void) {
+//     //Prueba 1 --> Ordenado
+//     int valores_1[5] = {1, 2, 3, 4, 5};
+//     printf("%d\n", ordenado(valores_1, 5));
+//     //Prueba 2 --> Desordenado
+//     int valores_2[5] = {1, 2, 0, 4, 5};
+//     printf("%d\n", ordenado(valores_2, 5));
+//     return 0;
+// }
+
+/* ----------------------------------- 12 ----------------------------------- */
+/* (búsqueda) Implementar una función que reciba un vector, su longitud, un número objetivo a buscar y retorne un valor booleando indicando si el mismo se encuentra o no. */
+// bool se_encuentra(int valores[], size_t n, int objetivo) {
+//     for (size_t i = 0; i < n; i++) {
+//         if (valores[i] == objetivo) return true;
+//     }
+//     return false;
+// }
+// int main(void) {
+//     // Opcion 1 --> Objetivo encontrado.
+//     int valores[7] = {1, 2, 3, 4, 5, 6, 7};
+//     int objetivo = 5;
+//     printf("%d\n", se_encuentra(valores, 5, objetivo));
+//     // Opcion 2 --> Objetivo NO encontrado.
+//     int objetivo_2 = 59;
+//     printf("%d\n", se_encuentra(valores, 5, objetivo_2));
+//     return 0;
+// }
+
+/* ----------------------------------- 13 ----------------------------------- */
+/* (búsqueda lineal) Implementar una función que reciba un vector, su longitud, un número objetivo a buscar y retorne la posición en la que se encuentra. */
+// int busqueda_lineal(const int v[], size_t n, int objetivo) {
+//     for (size_t i = 0; i < n; i++) {
+//         if (v[i] == objetivo)
+//             return printf("La ubicacion del objetivo es: %d\n", v[i]);
+//     }
+//     printf("No se encontro el objetivo :(\n");
+//     return 0;
+// }
+// int main(void) {
+//     // Opcion 1 --> Objetivo encontrado.
+//     int valores[5] = {1, 2, 3, 4, 5};
+//     int objetivo_1 = 3;
+//     busqueda_lineal(valores, 5, objetivo_1);
+//     // Opcion 2 --> Objetivo NO encontrado.
+//     int objetivo_2 = 59;
+//     busqueda_lineal(valores, 5, objetivo_2);
+//     return 0;
+// }
+
+/* ------ Hasta aca llegue con "Arreglos Unidimensionales", me canse :D ----- */
 
 /* -------------------------------------------------------------------------- */
 /*                  Funciones con arreglos multidimensionales                 */
@@ -327,6 +475,23 @@ int main(void) {
 //         putchar('\n');
 //     }
 //     return 0;
+// }
+
+// c) Los numeros del 1 al N.M
+// int matriz_nm(int matriz, size_t filas, size_t cols) {
+//     int resultado;
+//     for (size_t i = 0; i < filas; i++) {
+//         for (size_t i = 0; i < cols; i++) {
+//              resultado = 1 * filas * cols;
+//         }
+//     }
+//     printf("Los numeros del 1 al N.M son: %d\n", resultado);
+//     return 0;
+// }
+// int main(void) {
+// int matriz[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+// matriz_nm(matriz, 3, 3);
+// return 0;
 // }
 
 /* ----------------------------------- 18 ----------------------------------- */
