@@ -66,4 +66,21 @@ a) Itere hasta leer el carácter '\n' inclusive. */
 // }
 
 /* ----------------------------------- 11 ----------------------------------- */
-// a) size_t strlen(const char * );
+// Implemente sus propias versiones de las funciones de la biblioteca string.h que se detallan:
+//  a) size_t strlen(const char * );
+//  Funcion strlen: calcula la longitud de la cadena str hasta el carácter nulo final, pero sin incluirlo.
+int longitud(char cadena[], size_t n) {
+    int longitud_cadena;
+    size_t i;
+while(i != NULL){
+    longitud_cadena += i;
+
+    }
+    printf("La longitud de la cadena es: %d\n", longitud_cadena);
+    return 0;
+}
+int main(void) {
+    char cadena[TAMAGNO] = "Hola como va?";
+    longitud(cadena, TAMAGNO);
+    return 0;
+}
