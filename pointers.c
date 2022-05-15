@@ -261,3 +261,30 @@ Implementar una función que reciba 2 vectores y sus longitudes, y copie el cont
 //     putchar('\n');
 //     return 0;
 // }
+
+/* ----------------------------------- 11 ----------------------------------- */
+/*
+Implementar una función que reciba 2 vectores y sus longitudes, y retorne un valor booleano, por la interfaz, si los vectores son iguales.
+*/
+// bool iguales(int *v1, int *v2, size_t n1, size_t n2) {
+//     if (n1 != n2)
+//         return false;
+
+//     for (size_t i = 0; i < n1; i++) {
+//         if (v1[i] != v2[i])
+//             return false;
+//     }
+//     return true;
+// }
+
+// int main(void) {
+
+//     int v1[10] = {0, 0, 0, 0, 0, 0};
+//     int v2[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+// (iguales(v1, v2, 10, 10) == true) ? printf("Son iguales :D") : printf("Son diferentes :(");
+
+// return 0;
+// }
+
+/* ----------------------------------- 12 ----------------------------------- */
